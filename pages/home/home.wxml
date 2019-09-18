@@ -1,0 +1,10 @@
+<view>
+    <swiper class="swiper" indicator-dots="true" autoplay="true">
+        <block wx:for="{{bannerArr}}" wx:key="index">
+            <swiper-item class="banner-item">
+                <image mode="aspectFill" src="{{item.img.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view>test</view>
+</view>
