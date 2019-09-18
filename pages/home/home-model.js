@@ -5,14 +5,13 @@ class Home extends Base{
         super();
     }
 
-    getBannerData(id,callBack){
+    getBannerData(id,callback){
         var params = {
             url: 'banner/'+ id,
-            sCallBack:function(res){
-                callBack && callBack(res.items);
+            sCallback:function(res){
+                callback && callback(res.items);
             } 
         }
-
         this.request(params);
 
         // wx.request({
@@ -22,6 +21,26 @@ class Home extends Base{
         //        callBack(res);
         //     }
         // })
+    }
+
+    getThemeData(callback){
+        var param = {
+            url: 'theme?ids=1,2,3',
+            sCallback:function(data){
+                callback && callback(data);
+            } 
+        }
+        this.request(param);
+    }
+
+    getProductsData(callback){
+        var param = {
+            url: 'product/recent',
+            sCallback:function(data){
+                callback && callback(data);
+            } 
+        }
+        this.request(param);
     }
 }
 

@@ -19,13 +19,19 @@ class Base{
                 'token':wx.getStorageSync('token')
             },
             success:function(res){
-                params.sCallBack&&params.sCallBack(res.data);
+                
+                params.sCallback&&params.sCallback(res.data);
+               
             },
             fail:function(err){
                 console.log(err);
             }
 
         })
+    }
+
+    getDataSet(event,key){
+        return event.currentTarget.dataset[key];
     }
 }
 
