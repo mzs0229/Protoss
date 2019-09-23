@@ -26,7 +26,7 @@ Page({
 
   onReady:function(){
     wx.setNavigationBarTitle({
-      title: this.data.name
+      title: this.data.themeInfo.description
     });
   },
 

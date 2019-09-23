@@ -67,10 +67,7 @@ Page({
   },
 
   _loadData:function(){
-    // category.getCategoryType((categoryData)=>{
-    //   this.setData({
-    //     categoryTypeArr:categoryData
-    //   });
+   
 
       category.getCategoryType((categoryData) => {
 
