@@ -71,12 +71,23 @@ Page({
     var keys = ['id','name','main_img_url','price'];
 
     for(var key in this.data.product){
-      if(keys.indexOf(key)>0){
+      console.log(key);
+      console.log(this.data.product);
+      if(keys.indexOf(key)>=0){
+        console.log(keys.indexOf(key));
         tempObj[key] = this.data.product[key];
+  
       }
     }
 
     cart.add(tempObj,this.data.productCount);
+  },
+
+  onCartTap:function(event){
+    wx.switchTab({
+      url: '/pages/cart/cart'
+    });
+      
   }
 
   
