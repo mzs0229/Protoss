@@ -1,7 +1,7 @@
 <view class="container cart-container">
   <block wx:if="{{cartData.length>0}}">
     <view class="cart-box">
-      <block wx:for="{{cartData}}" Wx:key="{{index}}">
+      <block wx:for="{{cartData}}" wx:key="index">
         <view class="cart-item">
           <view class="cart-item-main">
             <view class="cart-item-checkbox" bindtap="toggleSelect" data-id="{{item.id}}" data-status="{{item.selectStatus}}">

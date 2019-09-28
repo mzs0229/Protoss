@@ -114,5 +114,16 @@ Page({
     this.data.cartData.splice(index,1);
     this._resetCartData();
     cart.delete(id);
+  },
+
+  submitOrder:function(event){
+    wx.navigateTo({
+      url: '../order/order?account='+ this.data.account +'&from=cart',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   }
 })

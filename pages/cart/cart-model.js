@@ -28,10 +28,20 @@ class Cart extends Base{
         
   }
 
-    getCartDataFromLocal(){
+    getCartDataFromLocal(flag){
         var res = wx.getStorageSync(this._storageKeyName);
         if(!res){
             res = [];
+        }
+
+        if(flag){
+            var newRes = [];
+            for(let i=0;i<res.length;i++){
+                if(res[i].selectStatus){
+                    newRes.push(res[i]);
+                }              
+            }
+            res = newRes;
         }
         return res;
     }
