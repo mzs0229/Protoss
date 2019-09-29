@@ -6,5 +6,6 @@
     
     <view class="theme-main">
         <template is="products" data="{{products:themeInfo.products}}"></template>
+        <!-- <template is='products' data="{{products:productsArr}}"></template> -->
     </view>
 </view>

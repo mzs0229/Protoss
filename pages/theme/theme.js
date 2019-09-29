@@ -30,6 +30,14 @@ Page({
     });
   },
 
+  onProductsItemTap:function(event){
+   
+    var id = theme.getDataSet(event,'id');
+    wx.navigateTo({
+      url: '../product/product?id='+id
+    });
+  },
+
   _loadData:function(){
     theme.getProductsData(this.data.id,(data)=>{
       console.log(data);
@@ -39,6 +47,4 @@ Page({
       })
     })
   }
-
-  
 })
