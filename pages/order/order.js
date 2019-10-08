@@ -21,24 +21,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var from = options.from;
+    if(from == 'cart'){
+      this._fromCart(options.account);
+    }else{
+      var id = options.id;
+      this._fromOrder(id);
+    }
+
+  },
+
+  _fromCart:function(account){
     var productsArr;
-    this.data.account = options.account;
+    this.data.account = account;
 
     productsArr = cart.getCartDataFromLocal(true);
     console.log(productsArr);
 
     this.setData({
-      productsArr:productsArr,
-      account:options.account,
-      orderStatus:0
+      productsArr: productsArr,
+      account: account,
+      orderStatus: 0
     });
 
-    address.getAddress((res)=>{
+    address.getAddress((res) => {
       this._bindAddressInfo(res);
     });
 
-
   },
+
+
 
   onShow: function () {
     if (this.data.id) {
